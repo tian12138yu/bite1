@@ -1,6 +1,7 @@
-package com;
+package com.bite;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @Author tjy
@@ -94,6 +95,31 @@ public class bite4_14 {
     }
     public static double sum(double x,double y,double z){
         return x+y+z;
+    }
+
+    /**
+     * 青蛙跳台阶问题
+     */
+
+    public static int jump(int n){
+        if(n==1)return 1;
+        if(n==2)return 2;
+        return jump(n-1)+jump(n-2);
+    }
+
+    /**
+     * 调整数组顺序使得奇数位于偶数之前。调整之后，不关心大小顺序。
+     */
+
+    public void jiouhuan(List<Integer> al){
+        for (int x = 0;x < al.size(); x++){
+            if(al.get(x)%2==0){
+                int y=al.get(x);
+                al.remove(x);
+                al.add(y);
+            }
+        }
+
     }
 
 }
