@@ -10,9 +10,13 @@ import java.util.List;
 
 public class bite4_14 {
     public static void main(String[] args) {
-        int sum = sum(3, 8);
-        double sum1 = sum(3.5, 6.4, 5.5);
-        System.out.println(sum+" "+sum1);
+//        int sum = sum(3, 8);
+//        double sum1 = sum(3.5, 6.4, 5.5);
+//        System.out.println(sum+" "+sum1);
+//        int diguisum = diguisum(156);
+//        System.out.println(diguisum);
+        String printsum = printsum(158);
+        System.out.println(printsum);
     }
     /**
      * 有一组数据，只有一个数字是出现一次，其他是两次，请找出这个数字。
@@ -30,7 +34,7 @@ public class bite4_14 {
      * 求斐波那契数列的第n项。(迭代实现)
      */
     public static int fei(int n){
-        int res=0;int one=1;int two=2;
+        int res=0;int one=1;int two=1;
         for (int x = 3;x <= n; x++){
             res=one+two;
             one=two;
@@ -122,4 +126,48 @@ public class bite4_14 {
 
     }
 
+    /**
+     * 递归求斐波那契数列的第 N 项
+     */
+
+    public static int feibudigui(int n){
+        if(n==1||n==2)return 1;
+        return feibudigui(n-1)+feibudigui(n-2);
+    }
+
+    /**
+     * 写一个递归方法，输入一个非负整数，返回组成它的数字之和
+     */
+
+
+    public static int diguisum(int n){
+        if(n/10==0)return n;
+        return diguisum(n/10)+n%10;
+    }
+
+    /**
+     * 按顺序打印一个数字的每一位(例如 1234 打印出 1 2 3 4) （递归）
+     */
+    public static String printsum(int n){
+        if(n/10==0)return String.valueOf(n);
+        return printsum(n/10)+" "+n%10;
+    }
+
+    /**
+     * 递归求 1 + 2 + 3 + ... + 10
+     */
+
+    public static int tensum(int n){
+        if(n==1)return 1;
+        return tensum(n-1)+n;
+    }
+
+    /**
+     * 递归求 N 的阶乘
+     */
+
+    public static int njiecheng(int n){
+        if(n==1)return 1;
+        return n*njiecheng(n-1);
+    }
 }
