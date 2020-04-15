@@ -170,4 +170,65 @@ public class bite4_14 {
         if(n==1)return 1;
         return n*njiecheng(n-1);
     }
+
+    /**
+     * 实现一个方法 avg, 以数组为参数, 求数组中所有元素的平均值(注意方法的返回值类型).
+     */
+
+    public static double avg(int[] sums){
+        int sum=0;
+        for (int x=0;x < sums.length; x++){
+            sum+=sums[x];
+        }
+        return (double) sum/sums.length;
+    }
+
+    /**
+     * 实现一个方法 sum, 以数组为参数, 求数组所有元素之和.
+     */
+
+    public static int sum(int[] sums){
+        int sum=0;
+        for (int x=0;x < sums.length; x++){
+            sum+=sums[x];
+        }
+        return  sum;
+    }
+
+    /**
+     * 实现一个方法 transform, 以数组为参数, 循环将数组中的每个元素 乘以 2 , 并设置到对应的数组元素上.
+     * 例如 原数组为 {1, 2, 3}, 修改之后为 {2, 4, 6}
+     */
+
+    public static int[] transform(int[] sums){
+        for (int x=0;x < sums.length; x++){
+            sums[x]*=2;
+        }
+        return sums;
+    }
+
+    /**
+     * 实现一个方法 printArray, 以数组为参数, 循环访问数组中的每个元素, 打印每个元素的值.
+     */
+
+    public static void printArray(int[] sums){
+        System.out.print("[ ");
+        for (int x=0;x < sums.length; x++){
+            System.out.print(sums[x]+" ");
+        }
+        System.out.println("]");
+    }
+
+    /**
+     * 创建一个 int 类型的数组, 元素个数为 100, 并把每个元素依次设置为 1 - 100
+     */
+    public static int[] array(){
+        int[] array=new int[100];
+        for (int x = 0;x < 100; x++){
+            array[x] =x+1;
+        }
+        return array;
+    }
+
+
 }
