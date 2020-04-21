@@ -31,6 +31,37 @@ public class bite4_19 {
             return true;
         }
 
+        public void delete(int index){
+            checkIndex(index);
+            for (int x = index+1; x < usedSize; x++){
+                this.elem[x-1]=this.elem[x];
+            }
+        }
+
+        public void update(int index,int x){
+            checkIndex(index);
+            this.elem[index] = x;
+        }
+
+        private boolean checkIndex(int index){
+            if (index < 0 || index >= usedSize){
+                throw new RuntimeException("角标错误！");
+            }
+            return true;
+
+        }
+
+         public int getPos(int pos){
+             if (usedSize == 0 ||
+                     pos >= usedSize ||
+                     pos < 0)return -1;
+             return elem[pos];
+         }
+
+         public int size(){
+             return usedSize;
+         }
+
         public String toString(){
             return Arrays.toString(elem);
         }
@@ -53,16 +84,7 @@ public class bite4_19 {
             return false;
         }
 
-        public int getPos(int pos){
-            if (usedSize == 0 ||
-                    pos >= usedSize ||
-                    pos < 0)return -1;
-            return elem[pos];
-        }
 
-        public int size(){
-            return usedSize;
-        }
     }
 
     public static void main(String[] args) {
