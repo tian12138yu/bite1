@@ -89,6 +89,53 @@ public class bite4_20 {
             return cur;
         }
 
+        public void remove(int key){
+            if (this.head == null){
+                throw new RuntimeException("当前链表为空！");
+            }
+            if (key == head.val){
+                head = head.next;
+                return;
+            }
+
+            Node pre = searchPre(key);
+            pre.next = pre.next.next;
+            size--;
+        }
+
+        private Node searchPre(int key){
+            Node pre = this.head;
+            while (pre.next !=null){
+                if (pre.next.val == key){
+                    return pre;
+                }
+                pre = pre.next;
+            }
+            return null;
+        }
+
+        public void removeAllKey(int key){
+            int x= 0;
+            Node pre = this.head;
+            Node cur = this.head.next;
+            while (cur != null){
+                if (cur.val == key){
+                    pre.next = cur.next;
+                    cur = cur.next;
+                    x++;
+                }else {
+                    pre = pre.next;
+                    cur = cur.next;
+                }
+            }
+
+            if (this.head.val == key){
+                this.head = this.head.next;
+                x++;
+            }
+            size -= x;
+        }
+
         public boolean constains(int x){
             Node cur = this.head;
             while(cur != null){
@@ -96,6 +143,11 @@ public class bite4_20 {
                 cur = cur.next;
             }
             return false;
+        }
+
+        public void clear(){
+            this.head = null;
+            size = 0;
         }
 
         public int size(){
@@ -117,6 +169,17 @@ public class bite4_20 {
             }
             System.out.println("null");
         }
+
+        public Node middleNode() {
+            Node low = this.head;
+            Node fast = this.head;
+            while (fast != null && fast.next !=null){
+                low = low.next;
+                fast = fast.next.next;
+            }
+
+            return low;
+        }
     }
 
     public static void main(String[] args) {
@@ -128,7 +191,8 @@ public class bite4_20 {
             myLinkedList.addLast(x);
         }
         myLinkedList.display();
+        myLinkedList.removeAllKey(8);
+        myLinkedList.display();
         System.out.println(myLinkedList.size);
     }
-
 }
