@@ -13,8 +13,42 @@ public class bite5_9 {
         String s = "1+1=2";
 //        String[] mysplit = Mysplit(s, "=");
 //        System.out.println(Arrays.toString(mysplit));
-        int i = myIndexOf(s, "=");
-        System.out.println(i);
+//        int i = myIndexOf(s, "=");
+//        System.out.println(i);
+//        String s3 = "dasda";
+//        String s1 = new String("dasda");
+//        System.out.println(s1 == s3);
+////        String s2 = new String("dasda");
+//        String intern1 = s1.intern();
+//        System.out.println(s1 == intern1);
+//
+//        String intern = s3.intern();
+//        System.out.println(intern1 == intern);
+
+//        String str1 = new StringBuilder("极客").append("学院").toString()
+//        String intern = str1.intern();
+
+        //两个对象通过Stringbuild连接。返回的字符串不会放入到常量池中，
+        // 在调用intern后才会放入，把堆对象放入常量池，所以是一个对象。
+        String s1 = new String("即可") + new String("时间");
+        String s11 = new String("即可") + new String("时间");
+//        String s1 = "dads"+"fasda" ;
+        System.out.println(s1 == s1.intern());
+        System.out.println(s11 == s11.intern());
+
+        String str2 = new String("dasds");
+        System.out.println(str2 == str2.intern());
+
+        String s5 = new String("即可") + new String("时间");
+        System.out.println(s5 == s5.intern());
+//        System.out.println(intern == str1);
+        // 第二段代码
+
+
+        String s2 = new String("123");
+        String s3 = "12";
+        String s4 = s3 + "3";
+        System.out.println(s2.intern() == s4.intern());
     }
 
     /**
