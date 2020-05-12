@@ -54,6 +54,10 @@ public class Main {
                 temp = al1;
             }
         }
+        Collections.sort(al1);
+        Collections.sort(al2);
+        Collections.sort(al3);
+
         System.out.println(al1);
         System.out.println(al2);
         System.out.println(al3);
