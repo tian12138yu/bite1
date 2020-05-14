@@ -37,12 +37,6 @@ public class MyStack<T> {
         }
     }
 
-    public T peek(){
-        if (empty()){
-            throw new RuntimeException("当前栈为空！");
-        }
-        return this.elem[top-1];
-    }
 
     public T pop(){
         if (empty()){
