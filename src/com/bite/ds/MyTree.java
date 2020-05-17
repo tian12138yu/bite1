@@ -99,12 +99,37 @@ public class MyTree {
         return getLeafSize2(root.left) + getLeafSize2(root.right) ;
     }
 
+    int getKLevelSize(Node1 root,int k){
+        if (root == null || k < 0)return 0;
+        if (k == 1)return 1;
+        return getKLevelSize(root.left,k - 1) + getKLevelSize(root.right,k - 1);
+    }
 
+    // 获取二叉树的高度
+
+    static int getHeight(Node1 root){
+        if (root == null)return 0;
+        return Math.max(getHeight(root.left),getHeight(root.right)) + 1;
+    }
+
+    Node1 find;
+    Node1 find(Node1 root, int val){
+        if (root == null)return null;
+        if (root.val == val){
+            find =root;
+            return root;
+        }
+
+        Node1 node = find(root.left,val);
+        if (node != null)return node;
+        return  find(root.right,val);
+    }
 
     public static void main(String[] args) {
         getLeafSize1(buildTree());
         System.out.println(getLeafSize2(buildTree()));
         System.out.println(leafSize);
+        System.out.println(getHeight(buildTree()));
     }
 
 }
