@@ -1,5 +1,10 @@
 package com.bite.ds;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Stack;
+
 /**
  * @Author tjy
  * @Date 2020/5/15 20:10
@@ -123,6 +128,115 @@ public class MyTree {
         Node1 node = find(root.left,val);
         if (node != null)return node;
         return  find(root.right,val);
+    }
+
+    void levelOrderTraversal(Node1 root){
+
+        if(root == null) return;
+        Queue<Node1> queue = new LinkedList<>();
+        queue.offer(root);
+        while ( !queue.isEmpty() ){
+            Node1 poll = queue.poll();
+//            if (poll == null)continue;
+            System.out.println(poll.val);
+            queue.offer(poll.left);
+            queue.offer(poll.right);
+        }
+
+
+    }
+
+    public List<List<Integer>> levelOrder(Node1 root) {
+        List<List<Integer>> ret = new LinkedList<>();
+        if(root == null) return ret;
+        Queue<Node1> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            //1、求当前队列的大小  size
+            int size = queue.size();
+            List<Integer> list =  new LinkedList<>();
+            //2、while(size > 0)  -->控制当前每一层的数据个数
+            while (size > 0){
+                Node1 poll = queue.poll();
+                list.add((int) poll.val);
+                queue.offer(poll.left);
+                queue.offer(poll.right);
+                size--;
+            }
+
+
+        }
+
+
+        return ret;
+    }
+
+    public boolean isFullTree(Node1 root){
+        if(root == null) return true;
+        Queue<Node1> queue = new LinkedList<>();
+        queue.offer(root);
+        while ( !queue.isEmpty() ) {
+            Node1 poll = queue.poll();
+            if ( poll== null){
+                break;
+            }else {
+                queue.offer(poll.left);
+                queue.offer(poll.right);
+            }
+        }
+
+        while ( !queue.isEmpty()){
+            if (queue.poll() != null)
+                return false;
+        }
+        return true;
+
+    }
+
+    /**
+     * 迭代实现中序遍历
+     * @param root
+     */
+    void inOrderTraversalNor(Node1 root){
+        if (root == null)return;
+        Stack<Node1> s = new Stack<>();
+
+        s.push(root);
+        Node1 cur = root;
+        while (cur != null || !s.isEmpty()){
+            while (cur != null ){
+                s.push(cur.left);
+                cur = cur.left;
+            }
+            Node1 top = s.pop();
+            System.out.println(top.val);
+            cur = top.right;
+        }
+
+    }
+
+    void postOrderTraversalNor(Node1 root){
+        if(root == null) return;
+        Stack<Node1> stack = new Stack<>();
+        Node1 cur = root;
+        Node1 prev = null;
+        while (cur != null || !stack.empty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.peek();
+            if (cur.right == null || cur.right == prev) {
+                System.out.print(cur.val+" ");
+                stack.pop();
+                prev = cur;
+                cur = null;
+            } else {
+                cur = cur.right;
+            }
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
