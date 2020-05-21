@@ -98,10 +98,24 @@ public class MyHeap {
             }
         }
     }
+
     public boolean isFull() {
 
         return usedSize == elem.length;
     }
+
+    public void sort(){
+        int end = this.usedSize - 1;
+        while (end > 0){
+            int temp = this.elem[0];
+            this.elem[0] =  this.elem[end - 1];
+            this.elem[end - 1] = temp;
+            adjustDown(0,end);
+            end--;
+        }
+
+    }
+
 
 
 }
