@@ -195,10 +195,33 @@ public class MyTree {
     }
 
     /**
+     * 迭代实现前序遍历
+     * @param root
+     */
+    static void preOrderTraversalNor(Node1 root){
+        if (root == null ){
+            return;
+        }
+        Stack<Node1> s = new Stack<>();
+        s.push(root);
+        Node1 cur = root;
+        while (cur != null || !s.isEmpty()){
+            while (cur != null){
+                s.push(cur);
+                System.out.print(cur.val);
+                cur = cur.left;
+            }
+            Node1 pop = s.pop();
+            cur = pop.right;
+        }
+
+    }
+
+    /**
      * 迭代实现中序遍历
      * @param root
      */
-    void inOrderTraversalNor(Node1 root){
+    static void inOrderTraversalNor(Node1 root){
         if (root == null)return;
         Stack<Node1> s = new Stack<>();
 
@@ -206,9 +229,10 @@ public class MyTree {
         Node1 cur = root;
         while (cur != null || !s.isEmpty()){
             while (cur != null ){
-                s.push(cur.left);
+                s.push(cur);
                 cur = cur.left;
             }
+
             Node1 top = s.pop();
             System.out.println(top.val);
             cur = top.right;
@@ -216,6 +240,10 @@ public class MyTree {
 
     }
 
+    /**
+     * 迭代实现后续
+     * @param root
+     */
     void postOrderTraversalNor(Node1 root){
         if(root == null) return;
         Stack<Node1> stack = new Stack<>();
@@ -239,18 +267,35 @@ public class MyTree {
         System.out.println();
     }
 
+    public static void first(Node1 root){
+        if (root == null)return;
+        Stack<Node1> s = new Stack<>();
+        s.push(root);
+        while ( !s.isEmpty() ){
+            Node1 pop = s.pop();
+            if (pop == null)continue;
+            System.out.print(pop.val);
+            s.push(pop.right);
+            s.push(pop.left);
+
+        }
+    }
+
     public static void main(String[] args) {
-        getLeafSize1(buildTree());
-        System.out.println(getLeafSize2(buildTree()));
-        System.out.println(leafSize);
-        System.out.println(getHeight(buildTree()));
+        first(buildTree());
+//        getLeafSize1(buildTree());
+        preOrderTraversalNor(buildTree());
+//        inOrderTraversalNor(buildTree());
+//        System.out.println(getLeafSize2(buildTree()));
+//        System.out.println(leafSize);
+//        System.out.println(getHeight(buildTree()));
     }
 
 }
 class Node1 {
     public char val;
-    public Node1 left;//左孩子-》左子树
-    public Node1 right;//右孩子-》右子树
+    public Node1 left = null;//左孩子-》左子树
+    public Node1 right = null;//右孩子-》右子树
     public Node1(char val) {
         this.val = val;
     }
