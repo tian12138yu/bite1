@@ -7,6 +7,10 @@ import java.util.Arrays;
  * @Date 2020/5/22 21:03
  */
 
+/**
+ * 时间复杂度：O（N*logn）
+ * 空间复杂度：O（1）
+ */
 public class HeapSort {
 
     public static void creatHeap(int[] array,int len){
