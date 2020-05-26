@@ -148,10 +148,10 @@ public class bite5_1 {
 
 }
 
-class e implements bite5_1.g {
-
-    @Override
-    public void a() {
-
-    }
-}
+//class e implements bite5_1.g {
+//
+//    @Override
+//    public void a() {
+//
+//    }
+//}

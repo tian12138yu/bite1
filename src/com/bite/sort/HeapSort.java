@@ -7,17 +7,17 @@ import java.util.Arrays;
  * @Date 2020/5/22 21:03
  */
 
-/**
- * 时间复杂度：O（N*logn）
- * 空间复杂度：O（1）
- */
+
 public class HeapSort {
 
     public static void creatHeap(int[] array,int len){
         for (int i = (len -2) / 2; i >= 0; i--) {
             adjustDown(array,i,len);
         }
-    }
+    }/**
+     * 时间复杂度：O（N*logn）
+     * 空间复杂度：O（1）
+     */
 
     private static void adjustDown(int[] array, int i, int len) {
         int parent = i;
