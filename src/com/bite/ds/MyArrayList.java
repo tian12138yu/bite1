@@ -2,6 +2,7 @@ package com.bite.ds;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -9,17 +10,17 @@ import java.util.concurrent.ConcurrentHashMap;
  * @Date 2020/5/13 15:09
  */
 
-public class MyArrayList {
-    public int[] elem;//数组
+public class MyArrayList<T> {
+    public T[] elem;//数组
     public int usedSize;//有效的数据个数
     public static final int intCapacity = 10;//初始容量
 
     public MyArrayList() {
-        this.elem = new int[intCapacity];
+        this.elem = (T[])new Object[intCapacity];
         this.usedSize = 0;
     }
 
-    public boolean add(int i,int pos){
+    public boolean add(T i,int pos){
         if (pos < 0||pos > usedSize)return false;
 
         for (int x = usedSize; x > pos; x--){
@@ -37,7 +38,7 @@ public class MyArrayList {
         }
     }
 
-    public void update(int index,int x){
+    public void update(int index,T x){
         checkIndex(index);
         this.elem[index] = x;
     }
@@ -50,10 +51,10 @@ public class MyArrayList {
 
     }
 
-    public int getPos(int pos){
+    public T getPos(int pos){
         if (usedSize == 0 ||
                 pos >= usedSize ||
-                pos < 0)return -1;
+                pos < 0)throw new RuntimeException("dada");
         return elem[pos];
     }
 
@@ -65,7 +66,7 @@ public class MyArrayList {
         return Arrays.toString(elem);
     }
 
-    public int search(int toFind){
+    public int search(T toFind){
         for (int x = 0; x < usedSize; x++){
             if (elem[x] == toFind ){
                 return x;
@@ -74,7 +75,7 @@ public class MyArrayList {
         return -1;
     }
 
-    public boolean contains(int toFind){
+    public boolean contains(T toFind){
         for (int x = 0; x < usedSize; x++){
             if (elem[x] == toFind ){
                 return true;
