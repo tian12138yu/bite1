@@ -96,6 +96,14 @@ public class BSTree {
         return false;
     }
 
+    /**
+     * 删除节点需要先判断当前删除节点是否拥有孩子，如果只有一个孩子，就直接把孩子赋给当前节点的父亲节点。
+     * 如果两个孩子都有，需要找到左树中的最大值或者右树中的最小值，将要删除的节点的值变成它，
+     * 然后将这个替代值删除即可。
+     * 因为这个替代值是最大或最小值，是只有一个孩子，删除较为容易。
+     * @param parent
+     * @param cur
+     */
     public void removeNode(Node parent,Node cur) {
         if(cur.left == null) {
             if(cur == root) {
