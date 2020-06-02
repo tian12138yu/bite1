@@ -33,18 +33,21 @@ class Person{
 public class test {
 
     public static void main(String[] args) {
-        MyHashMap myHashMap = new MyHashMap();
-        for (int i = 0; i < 7; i++) {
-            myHashMap.put(new Person(i),i);
-        }
-        myHashMap.put(new Person(11),11);
-        int o = (int) myHashMap.get(new Person(3));
-        System.out.println(o);
-        HashMap<Person, Integer> map = new HashMap<>();
-        for (int i = 0; i < 7; i++) {
-            map.put(new Person(i),i);
-        }
-        Integer integer = map.get(new Person(3));
-        System.out.println(integer);
+//        MyHashMap myHashMap = new MyHashMap();
+//        for (int i = 0; i < 7; i++) {
+//            myHashMap.put(new Person(i),i);
+//        }
+//        myHashMap.put(new Person(11),11);
+//        int o = (int) myHashMap.get(new Person(3));
+//        System.out.println(o);
+//        HashMap<Person, Integer> map = new HashMap<>();
+//        for (int i = 0; i < 7; i++) {
+//            map.put(new Person(i),i);
+//        }
+//        Integer integer = map.get(new Person(3));
+//        System.out.println(integer);
+        StringBuilder a = new StringBuilder("a");
+        a.insert(1,"b");
+        System.out.println(a.toString());
     }
 }
