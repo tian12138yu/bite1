@@ -13,7 +13,7 @@ import java.util.Objects;
  */
 
 class Person{
-    public int id;
+    private int id;
 
     public Person(int id) {
         this.id = id;
@@ -51,6 +51,6 @@ public class test {
 //        StringBuilder a = new StringBuilder("a");
 //        a.insert(1,"b");
 //        System.out.println(a.toString());
-        Collection a = new ArrayList();
+        Person person = new Person(122);
     }
 }
