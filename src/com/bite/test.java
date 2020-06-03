@@ -2,10 +2,7 @@ package com.bite;
 
 import com.bite.ds.MyHashMap;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * @Author tjy
@@ -34,7 +31,7 @@ class Person{
 }
 public class test {
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
 //        MyHashMap myHashMap = new MyHashMap();
 //        for (int i = 0; i < 7; i++) {
 //            myHashMap.put(new Person(i),i);
@@ -53,4 +50,52 @@ public class test {
 //        System.out.println(a.toString());
         Person person = new Person(122);
     }
+
+    public static void main2(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc. nextInt();
+        int count1 = 1;
+        int count2 = 1;
+        while (count1 + count2 <= n){
+            int temp = count1;
+            count1 = count2;
+            count2 = temp + count2;
+        }
+        if (count1 + count2 == n){
+            System.out.println(0);
+        }
+        System.out.println(Math.min(n - count2, count1 + count2 - n));
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        StringBuilder sb = new StringBuilder();
+        while (sc.hasNext()){
+            sb.append(sc.nextLine()+ " ");
+        }
+        String[] s = sb.toString().split(" ");
+        HashSet<String> set = new HashSet<>();
+        for (int i = 0; i < s.length; i++) {
+            set.add(s[i]);
+        }
+        System.out.println(set.size());
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
