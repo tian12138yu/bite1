@@ -2,6 +2,8 @@ package com.bite;
 
 import com.bite.ds.MyHashMap;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -46,8 +48,9 @@ public class test {
 //        }
 //        Integer integer = map.get(new Person(3));
 //        System.out.println(integer);
-        StringBuilder a = new StringBuilder("a");
-        a.insert(1,"b");
-        System.out.println(a.toString());
+//        StringBuilder a = new StringBuilder("a");
+//        a.insert(1,"b");
+//        System.out.println(a.toString());
+        Collection a = new ArrayList();
     }
 }
