@@ -6,20 +6,20 @@ package com.bite;
  */
 
 public class bite5_12 {
-//    public static void main(String[] args) {
-////        A<Integer> a =new A(5);
-////        System.out.println(a.get());
-////    }
+    public static void main(String[] args) {
+        A<Integer> a =new A(5);
+        System.out.println(a.get());
+    }
 
+    static class A<T> {
+        T value;
+
+        A(T value) {
+            this.value = value;
+        }
+
+        T get() {
+            return value;
+        }
+    }
 }
-//class A<T> {
-//    T value;
-//
-//    A(T value) {
-//        this.value = value;
-//    }
-//
-//    T get() {
-//        return value;
-//    }
-//}
