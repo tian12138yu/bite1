@@ -52,7 +52,7 @@ public class test {
         Integer[] a = {2,5,6,32,4,2};
         List<Integer> ints = Arrays.asList(a);
         /**
-         * Arrays.aslist使用：数组必须为包装类，
+         * Arrays.aslist使用：数组必须为包装类
          * 如果是基本数据类型则返回值的泛型为基本数据数组类型不是基本数据类型。
          */
         String[] userid = {"aa","bb","cc"};
