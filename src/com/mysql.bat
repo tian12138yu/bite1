@@ -1,0 +1,1 @@
+@java -cp "D:\idea\bite1\out\production\bite1" com.bite.sql.MysqlClient %*
