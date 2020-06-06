@@ -1,6 +1,7 @@
 package com.bite.sql;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * @Author tjy
@@ -18,19 +19,34 @@ public class MysqlClient {
     private static String password = "";
     private static String defaultDatabaseName = "";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println(Arrays.toString(args));
         // args 代表的就是用户输入的参数
-        if (args.length == 0) {
-            printUsageAndExit();
-        }
+//        if (args.length == 0) {
+////            printUsageAndExit();
+////        }
 
-        parseArguments(args);
-        System.out.println(host);
-        System.out.println(port);
-        System.out.println(user);
-        System.out.println(password);
-        System.out.println(defaultDatabaseName);
+//        parseArguments(args);
+//        System.out.println(host);
+//        System.out.println(port);
+//        System.out.println(user);
+//        System.out.println(password);
+//        System.out.println(defaultDatabaseName);
+        Scanner sc = new Scanner(System.in);
+        while (true){
+            System.out.print("mysql>");
+
+            String s =sc.nextLine();
+            JDBCDemo jdbcDemo = new JDBCDemo();
+            if (s.startsWith("select")){
+                jdbcDemo.select(s);
+            }else if (s.startsWith("update") || s.startsWith("insert")){
+                jdbcDemo.update(s);
+            }else if(s.equals("quit")){
+                System.out.println("拜拜！");
+                System.exit(0);
+            }
+        }
     }
 
     private static void parseArguments(String[] args) {
