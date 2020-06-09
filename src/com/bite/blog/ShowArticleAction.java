@@ -15,8 +15,8 @@ public class ShowArticleAction implements Action {
     @Override
     public void run() {
         try (Connection c = DBUtil.getConnection()) {
-            List<String[]> articleList = new ArrayList<>();
 
+            List<String[]> articleList = new ArrayList<>();
             String sql = "select id, author_id, title, published_at from articles order by published_at desc";
             try (PreparedStatement s = c.prepareStatement(sql)) {
                 try (ResultSet rs = s.executeQuery()) {
