@@ -46,7 +46,6 @@ public class ArticlePublishAction implements Action {
                 s.setString(2, title);
                 s.setString(3, publishedAtStr); // "2020-06-08 20:10:38"
                 s.setString(4, content);
-
                 s.executeUpdate();
 
                 System.out.println("《" + title + "》 文章发表成功！");

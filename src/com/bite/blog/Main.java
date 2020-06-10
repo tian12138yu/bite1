@@ -30,6 +30,8 @@ public class Main {
         actionList.add(new ShowArticleAction());
         actionList.add(new ArticlePublishAction());
         actionList.add(new ArticleDetailAction());
+        actionList.add(new CommentAction());
+        actionList.add(new LikeAction());
     }
 
     public static void main(String[] args) {

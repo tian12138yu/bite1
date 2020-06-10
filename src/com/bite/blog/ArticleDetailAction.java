@@ -102,6 +102,7 @@ public class ArticleDetailAction implements Action {
             System.out.println(publishedAt);
             System.out.println("点赞人数: " + likeCount);
             System.out.println("==================================================");
+            System.out.println("评论内容：");
             System.out.println(content);
             System.out.println("==================================================");
             for (String[] comment : commentList) {
