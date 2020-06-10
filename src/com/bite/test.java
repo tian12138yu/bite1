@@ -1,5 +1,6 @@
 package com.bite;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 /**
@@ -73,7 +74,7 @@ public class test {
         System.out.println(Math.min(n - count2, count1 + count2 - n));
     }
 
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         while (sc.hasNext()){
@@ -85,6 +86,11 @@ public class test {
             set.add(s[i]);
         }
         System.out.println(set.size());
+    }
+
+    public static void main(String[] args) {
+        BigDecimal bigDecimal = new BigDecimal(5);
+        System.out.println(bigDecimal.toString());
     }
 
 }
