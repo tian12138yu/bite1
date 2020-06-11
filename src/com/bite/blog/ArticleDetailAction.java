@@ -14,6 +14,8 @@ import java.util.*;
 public class ArticleDetailAction implements Action {
     @Override
     public void run() {
+
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("请输入要查看的文章的id> ");
         String id = scanner.nextLine();
