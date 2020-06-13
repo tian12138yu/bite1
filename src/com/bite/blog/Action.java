@@ -5,7 +5,6 @@ package com.bite.blog;
  * @Date 2020/6/8 18:29
  */
 
-import java.sql.SQLException;
 
 /**
  * 有意识的把每个功能的操作，使用一个 Action 接口抽象了
