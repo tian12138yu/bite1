@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 
 public class bite6_15 {
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
 //        int x= 5;
 //        int y = 10;
 //        boolean a =  x > 10 && y <20 || x < 10 && y >20;
