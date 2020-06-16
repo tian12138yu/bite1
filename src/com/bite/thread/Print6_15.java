@@ -1,5 +1,8 @@
 package com.bite.thread;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -32,8 +35,6 @@ public class Print6_15 {
         sc.nextInt();
         System.out.println("通知停止。。");
         t.interrupt();
-
-
 //        print();
 
     }
