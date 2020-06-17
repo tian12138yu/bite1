@@ -60,8 +60,20 @@ public class bite6_17 {
         return Integer.parseInt(sb.reverse().toString());
     }
 
-    public static void main1(String[] args) {
-        System.out.println(addAB(1, 2));
+    public static int add(int a,int b){
+        int carry,add;
+        do{
+            add = a^b;
+            carry = (a&b)<<1;
+            a = add;
+            b=carry;
+        }while(carry!=0);
+        return add;
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println(add(2, 6));
     }
 
 
@@ -85,7 +97,7 @@ public class bite6_17 {
 
 
 
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
         Scanner in = new Scanner(System.in);
         int x0 = in.nextInt();
         in.close();
@@ -96,5 +108,11 @@ public class bite6_17 {
         }
         System.out.println(x0);
         System.out.println(count);
+    }
+
+    public static void main4(String[] args) {
+        int a =4;
+        int b =2;
+        System.out.println(a & b);
     }
 }
