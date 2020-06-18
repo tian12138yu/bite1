@@ -88,9 +88,15 @@ public class test {
         System.out.println(set.size());
     }
 
-    public static void main(String[] args) {
+    public static void main4(String[] args) {
         BigDecimal bigDecimal = new BigDecimal(5);
         System.out.println(bigDecimal.toString());
+    }
+
+    public static void main(String[] args) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(1,1);
+        System.out.println(map.get(2));
     }
 
 }
