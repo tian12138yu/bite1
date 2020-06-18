@@ -18,14 +18,27 @@ public class ThreadUnsafeDemo {
     static class Add extends Thread {
         @Override
         public  void run() {
-            add();
+//            add();
+            synchronized (Sub.currentThread()){
+                for (int i = 0; i < N; i++) {
+                    v++;
+                }
+            }
+
+
         }
     }
 
     static class Sub extends Thread {
         @Override
         public  void run() {
-            add();
+//            add();
+            synchronized (Sub.currentThread()){
+                for (int i = 0; i < N; i++) {
+                    v--;
+                }
+            }
+
         }
     }
 

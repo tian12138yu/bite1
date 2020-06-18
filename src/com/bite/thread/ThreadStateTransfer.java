@@ -1,5 +1,6 @@
 package com.bite.thread;
 
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -11,17 +12,17 @@ public class ThreadStateTransfer {
     static class SubThread extends Thread {
         @Override
         public void run() {
-            /*
+
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
             System.out.println("子线程即将退出");
-            */
 
-            try {
-                TimeUnit.SECONDS.sleep(5);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
+//            try {
+//                TimeUnit.SECONDS.sleep(5);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
         }
     }
 
