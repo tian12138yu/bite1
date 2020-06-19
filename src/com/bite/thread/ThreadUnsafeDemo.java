@@ -31,9 +31,9 @@ public class ThreadUnsafeDemo {
 
     static class Sub extends Thread {
         @Override
-        public  void run() {
+        public void run() {
 //            add();
-            synchronized (Sub.currentThread()){
+            synchronized (Sub.currentThread()) {
                 for (int i = 0; i < N; i++) {
                     v--;
                 }
