@@ -19,6 +19,10 @@ public class bite6_22 {
         return b;
     }
 
+    /**
+     * 堆排序不是稳定的排序，不能使用。
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()){
@@ -75,23 +79,11 @@ public class bite6_22 {
             //降序
             if(option==0)
             {
-                Collections.sort(stuList, new Comparator<Student>()
-                {
-                    public int compare(Student o1,Student o2)
-                    {
-                        return o2.score-o1.score;
-                    }
-                });
+                Collections.sort(stuList, (o1, o2) -> o2.score-o1.score);
             }
             else if(option==1)//升序
             {
-                Collections.sort(stuList, new Comparator<Student>()
-                {
-                    public int compare(Student o1,Student o2)
-                    {
-                        return o1.score-o2.score;
-                    }
-                });
+                Collections.sort(stuList, (o1, o2) -> o1.score-o2.score);
             }
             for(int i=0;i<stuList.size();i++)
             {
