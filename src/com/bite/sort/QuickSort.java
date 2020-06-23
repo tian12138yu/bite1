@@ -13,7 +13,6 @@ import java.util.Stack;
 public class QuickSort {
 
     public void sort(int[] array){
-
     }
 
     /**

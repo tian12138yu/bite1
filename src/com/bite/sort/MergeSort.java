@@ -11,7 +11,7 @@ import java.util.Arrays;
  * 先将数组分成一个一个的数组，在把分开的一个一个排序，然后往上返回，最后成有序的
  * 时间复杂度：O(nlogn)
  * 空间复杂度：O(n)
- * 稳点的排序。
+ * 稳定的排序。
  */
 public class MergeSort {
     public static void spilit(int[] array,int left,int right){
