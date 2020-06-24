@@ -1,5 +1,6 @@
 package com.bite;
 
+
 import java.math.BigDecimal;
 import java.util.*;
 
@@ -93,10 +94,27 @@ public class test {
         System.out.println(bigDecimal.toString());
     }
 
-    public static void main(String[] args) {
+    public static void main5(String[] args) {
         HashMap<Integer, Integer> map = new HashMap<>();
         map.put(1,1);
         System.out.println(map.get(2));
+    }
+
+    public static void main(String[] args) {
+//        String s1 = "计算机" + "软件";
+//        String s5 = new StringBuilder("计算机").append("软件").toString();
+        String s5 = new StringBuilder("计算机").append("aa").toString();
+        String s = "计算机";
+        System.out.println(s5 == s5.intern());
+        System.out.println(s == s.intern());
+
+//        System.out.println(s1.intern() == s1);
+//        String s = "ja" + "va";
+//        System.out.println(s.intern() == s);
+////        String s2 = "aa";
+////        String s3 = "bb";
+//        String s4 = "aabb";
+//        System.out.println("aa" + "bb" == s4);
     }
 
 }
