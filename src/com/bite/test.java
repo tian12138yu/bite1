@@ -100,7 +100,7 @@ public class test {
         System.out.println(map.get(2));
     }
 
-    public static void main(String[] args) {
+    public static void main6(String[] args) {
 //        String s1 = "计算机" + "软件";
 //        String s5 = new StringBuilder("计算机").append("软件").toString();
         String s5 = new StringBuilder("计算机").append("aa").toString();
@@ -115,6 +115,12 @@ public class test {
 ////        String s3 = "bb";
 //        String s4 = "aabb";
 //        System.out.println("aa" + "bb" == s4);
+    }
+
+    public static void main(String[] args) {
+        char c = 'A';
+        char a = (char) (c -5);
+        System.out.println(a);
     }
 
 }
