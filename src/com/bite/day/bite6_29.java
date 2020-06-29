@@ -110,12 +110,13 @@ public class bite6_29 {
     }
 
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        while(sc.hasNext()){
-            String s = sc.nextLine();
+        BufferedReader bf=new BufferedReader(new InputStreamReader(System.in));
+        String s = "";
+        while((s = bf.readLine())!= null){
+//            String s = sc.nextLine();
             String[] split = s.split("\\.");
             StringBuilder sb = new StringBuilder();
-            sb.append("人命币");
+            sb.append("人民币");
             boolean isZero = false;
             for (int i = 0; i < split[0].length(); i++) {
                 char c = split[0].charAt(i);
