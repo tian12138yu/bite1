@@ -117,10 +117,19 @@ public class test {
 //        System.out.println("aa" + "bb" == s4);
     }
 
-    public static void main(String[] args) {
+    public static void main7(String[] args) {
         char c = 'A';
         char a = (char) (c -5);
         System.out.println(a);
+    }
+
+    public static void main(String[] args) {
+        String s = "";
+        String[] split1 = s.split(":////");
+        String xieyi = split1[0];
+        for (int i = 0; i < split1[0].length(); i++) {
+
+        }
     }
 
 }
