@@ -1,9 +1,9 @@
-package com.bookStore.user;
+package com.bite.bookStore.user;
 
-import com.bookStore.book.BookList;
-import com.bookStore.operation.Add;
-import com.bookStore.operation.Delete;
-import com.bookStore.operation.FindAll;
+import com.bite.bookStore.book.BookList;
+import com.bite.bookStore.operation.Add;
+import com.bite.bookStore.operation.Delete;
+import com.bite.bookStore.operation.FindAll;
 
 import java.util.Scanner;
 

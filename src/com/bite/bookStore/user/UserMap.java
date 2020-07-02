@@ -1,4 +1,4 @@
-package com.bookStore.user;
+package com.bite.bookStore.user;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,6 @@
-package com.bookStore.operation;
+package com.bite.bookStore.operation;
 
-import com.bookStore.book.BookList;
+import com.bite.bookStore.book.BookList;
 
 import java.util.Scanner;
 
@@ -9,14 +9,13 @@ import java.util.Scanner;
  * @Date 2020/5/1 15:53
  */
 
-public class Borrow implements Ioperation {
+public class Back implements Ioperation {
 
     @Override
     public void work(BookList list) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("输入要借用的书名：");
+        System.out.println("输入要归还的书名：");
         String name = scanner.nextLine();
-        list.borrow(name);
+        list.back(name);
     }
-
 }

@@ -1,7 +1,7 @@
-package com.bookStore.user;
+package com.bite.bookStore.user;
 
-import com.bookStore.book.BookList;
-import com.bookStore.operation.*;
+import com.bite.bookStore.book.BookList;
+import com.bite.bookStore.operation.*;
 
 import java.util.Scanner;
 

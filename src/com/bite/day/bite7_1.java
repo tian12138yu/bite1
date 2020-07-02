@@ -4,8 +4,9 @@ package com.bite.day;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @Author tjy
@@ -78,5 +79,11 @@ public class bite7_1 {
 //        System.out.println(Long.toBinaryString(n));
 //        System.out.println(Integer.parseInt("11111111", 2));
         System.out.println((10101010 & 255));
+        new ArrayList<Integer>().toString();
+        new HashMap<>().toString();
+        new CopyOnWriteArrayList<>();
+        new TreeMap<>();
+        new ConcurrentHashMap<>();
+        new Hashtable<>();
     }
 }

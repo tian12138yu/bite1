@@ -1,7 +1,7 @@
-package com.bookStore;
+package com.bite.bookStore;
 
-import com.bookStore.user.User;
-import com.bookStore.user.UserMap;
+import com.bite.bookStore.user.User;
+import com.bite.bookStore.user.UserMap;
 
 import java.util.Scanner;
 

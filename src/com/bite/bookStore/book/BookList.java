@@ -1,4 +1,4 @@
-package com.bookStore.book;
+package com.bite.bookStore.book;
 
 import java.util.ArrayList;
 import java.util.List;

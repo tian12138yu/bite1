@@ -1,7 +1,4 @@
-package com.bookStore.user;
-
-import java.util.HashMap;
-import java.util.Map;
+package com.bite.bookStore.user;
 
 /**
  * @Author tjy

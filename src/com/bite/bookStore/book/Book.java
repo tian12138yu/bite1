@@ -1,4 +1,4 @@
-package com.bookStore.book;
+package com.bite.bookStore.book;
 
 /**
  * @Author tjy
