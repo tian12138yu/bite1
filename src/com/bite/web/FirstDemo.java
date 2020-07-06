@@ -54,7 +54,7 @@ public class FirstDemo extends HttpServlet {
 
         public static Connection getConnection() throws SQLException {
             if (dataSource == null){
-                synchronized (com.bite.blog.DBUtil.class){
+                synchronized (FirstDemo.class){
                     if (dataSource == null){
                         MysqlDataSource mysqlDataSource = new MysqlDataSource();
                         mysqlDataSource.setServerName("127.0.0.1");
