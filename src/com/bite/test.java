@@ -124,12 +124,15 @@ public class test {
     }
 
     public static void main(String[] args) {
-        String s = "";
+        /*String s = "";
         String[] split1 = s.split(":////");
         String xieyi = split1[0];
         for (int i = 0; i < split1[0].length(); i++) {
 
-        }
+        }*/
+        int a = 96;
+        char c = (char) a;
+        System.out.println(c);
     }
 
 }
