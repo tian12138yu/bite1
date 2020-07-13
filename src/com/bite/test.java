@@ -3,6 +3,7 @@ package com.bite;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @Author tjy
@@ -130,9 +131,21 @@ public class test {
         for (int i = 0; i < split1[0].length(); i++) {
 
         }*/
-        int a = 96;
-        char c = (char) a;
-        System.out.println(c);
+//        int a = 96;
+//        char c = (char) a;
+//        System.out.println(c);
+//        new ConcurrentHashMap<>();
+//        char c = '1';
+//        int x = c -'0';
+//        System.out.println(x);
+        PriorityQueue<Integer> integers = new PriorityQueue<>();
+        integers.offer(1);
+        integers.offer(5);
+        integers.offer(9);
+        integers.remove(5);
+        for (int x : integers){
+            System.out.println(x);
+        }
     }
 
 }
