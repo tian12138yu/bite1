@@ -124,7 +124,7 @@ public class test {
         System.out.println(a);
     }
 
-    public static void main(String[] args) {
+    public static void main8(String[] args) {
         /*String s = "";
         String[] split1 = s.split(":////");
         String xieyi = split1[0];
@@ -146,6 +146,13 @@ public class test {
         for (int x : integers){
             System.out.println(x);
         }
+    }
+
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder("dadada");
+        StringBuilder y = sb.insert(5, "y");
+        StringBuilder x = sb.insert(0, "x");
+        System.out.println(y.toString() + " " + x.toString());
     }
 
 }
