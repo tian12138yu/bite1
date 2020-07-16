@@ -28,7 +28,7 @@ public class bite7_15 {
                     b = ishuiwen(sb.insert(i,s.charAt(j)).toString());
                 }
                 if (a || b) {
-                    System.out.println("Yes");
+                    System.out.println("YES");
                     x = true;
                     break;
                 }
@@ -36,7 +36,7 @@ public class bite7_15 {
                 j--;
             }
             if (!x){
-                System.out.println("No");
+                System.out.println("NO");
             }
 
         }
