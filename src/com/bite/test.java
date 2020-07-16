@@ -3,7 +3,7 @@ package com.bite;
 
 import java.math.BigDecimal;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.*;
 
 /**
  * @Author tjy
@@ -148,11 +148,34 @@ public class test {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main9(String[] args) {
         StringBuilder sb = new StringBuilder("dadada");
         StringBuilder y = sb.insert(5, "y");
         StringBuilder x = sb.insert(0, "x");
         System.out.println(y.toString() + " " + x.toString());
+    }
+
+    public static void main(String[] args) {
+        FutureTask<Integer> integerFutureTask = new FutureTask<>(new a());
+        Thread thread = new Thread(integerFutureTask);
+        thread.start();
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        executorService.execute(() -> {});
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println(Thread.currentThread().getName());
+            }
+        });
+    }
+
+    static class a implements Callable<Integer>{
+
+        @Override
+        public Integer call() throws Exception {
+            System.out.println("我是callable");
+            return 111;
+        }
     }
 
 }
