@@ -155,7 +155,7 @@ public class test {
         System.out.println(y.toString() + " " + x.toString());
     }
 
-    public static void main(String[] args) {
+    public static void main10(String[] args) {
         FutureTask<Integer> integerFutureTask = new FutureTask<>(new a());
         Thread thread = new Thread(integerFutureTask);
         thread.start();
@@ -176,6 +176,11 @@ public class test {
             System.out.println("我是callable");
             return 111;
         }
+    }
+
+    public static void main(String[] args) {
+        char c = '5';
+        System.out.println(c + 1);
     }
 
 }
