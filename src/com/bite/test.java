@@ -178,9 +178,42 @@ public class test {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main11(String[] args) {
         char c = '5';
         System.out.println(c + 1);
+    }
+
+    static class A  implements Runnable{
+        Object a;
+        Object b;
+
+        public A(Object a, Object b) {
+            this.a = a;
+            this.b = b;
+        }
+        @Override
+        public void run() {
+            synchronized (a){
+                System.out.println(Thread.currentThread().getName());
+                try {
+                    TimeUnit.SECONDS.sleep(2);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                synchronized (b){
+                    System.out.println(Thread.currentThread().getName());
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Object a = new Object();
+        Object b = new Object();
+
+        new Thread(new A(a,b)).start();
+        new Thread(new A(b,a)).start();
+
     }
 
 }
