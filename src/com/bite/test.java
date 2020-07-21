@@ -207,13 +207,17 @@ public class test {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main12(String[] args) {
         Object a = new Object();
         Object b = new Object();
 
         new Thread(new A(a,b)).start();
         new Thread(new A(b,a)).start();
 
+    }
+
+    public static void main(String[] args) {
+        System.out.println(5 & 4);
     }
 
 }

@@ -72,26 +72,49 @@ public class bite7_20 {
         }
     }
 
-    public static void main3(String[] args) throws IOException{
+
+    /**
+     * 先将所有数组元素亦或一遍，得出的结果就是两个出现奇数次的数的亦或值，
+     * 可以同过得到的亦或值中为1的那一位（为1表示这一位他们两个不相同）
+     * 再次遍历数组，可以按照这一位是0或者1分为两个组，两个奇数次的数分别进入两个组，
+     * 再将两个组分别亦或，最后得出的两个就是结果。
+     * @param args
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String s =  br.readLine();
-        int n = Integer.parseInt(s);
-        List<String> al = new ArrayList<>();
-        String[] ss = br.readLine().split(" ");
-        for (int i = 0; i < n; i++){
-            if (al.contains(ss[i])){
-                al.remove(ss[i]);
-            }else {
-                al.add(ss[i]);
+        String s = "";
+        while (( s = br.readLine()) != null){
+            String[] ss = br.readLine().split(" ");
+            int x = Integer.parseInt(ss[0]);
+            int[] array = new int[ss.length];
+            array[0] = x;
+            for (int i = 1; i < ss.length; i++){
+                int i1 = Integer.parseInt(ss[i]);
+                array[i] = i1;
+                x = x ^ i1;
             }
-        }
-        char c = al.get(0).charAt(0);
-        char c1 = al.get(1).charAt(0);
-        if (c > c1){
-            System.out.println(c1 + " " + c);
-        }else {
-            System.out.println(c + " " + c1);
+            int y =1;
+            while ((x & y) != y){
+                y = y << 1;
+            }
+            int res1 = 0;
+            int res2 = 0;
+
+            for (int i = 0; i < ss.length; i++) {
+                if ((array[i] & y) == y){
+                    res1 ^= array[i];
+
+                }else {
+                    res2 ^= array[i];
+                }
+            }
+
+            if (res1 > res2){
+                System.out.println(res2 + " " + res1);
+            }else {
+                System.out.println(res1 + " " + res2);
+            }
         }
 
 
@@ -140,7 +163,7 @@ public class bite7_20 {
         return res;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main3(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(bufferedReader.readLine());
         int[] arr = new int[n];
