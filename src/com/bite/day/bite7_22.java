@@ -39,7 +39,7 @@ public class bite7_22 {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main3(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = "";
         while ((s = br.readLine()) != null){
@@ -49,16 +49,18 @@ public class bite7_22 {
             String s2 = s1[n + 1];
             int len = s2.length();
             int index = Integer.parseInt(s1[s1.length-1]);
-            ArrayList<String> al = new ArrayList<>();
+            String[] ss = new String[n];
+            int x = 0;
             for (int i = 1; i <= n; i++) {
                 if (s1[i].length() == len && !s1[i].equals(s2) && isBro(s1[i],s2)) {
-                    al.add(s1[i]);
+                    ss[x] = s1[i];
+                    x++;
                 }
             }
-            Collections.sort(al);
-            if (index <= al.size()){
-                System.out.println(al.size());
-                System.out.println(al.get(index-1));
+            System.out.println(x);
+            Arrays.sort(ss,0,x);
+            if (index <= x){
+                System.out.println(ss[index-1]);
             }
 
         }
@@ -166,5 +168,29 @@ public class bite7_22 {
             }
         }
         return count;
+    }
+
+    public static int maxProduct(int[] nums) {
+        int[][] dp = new int[nums.length][2];
+        dp[0][0] = nums[0];
+        dp[0][1] = nums[0];
+        int max = dp[0][0];
+        for (int i = 1; i < nums.length; i++){
+            if (nums[i] > 0){
+                dp[i][0] = Math.max(dp[i-1][0] * nums[i],nums[i]);
+                dp[i][1] = Math.min(dp[i-1][1] * nums[i],nums[i]);
+            } else{
+                dp[i][0] = Math.max(dp[i-1][1] * nums[i],nums[i]);
+                dp[i][1] = Math.min(dp[i-1][0] * nums[i],nums[i]);
+            }
+            max = Math.max(max,dp[i][0]);
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {-3,-1,-1};
+        int i = maxProduct(nums);
+        System.out.println(i);
     }
 }
