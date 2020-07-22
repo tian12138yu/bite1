@@ -17,6 +17,7 @@ public class ServletManager {
 
     private Map<String, HttpServlet> allServletInstances = new HashMap<>();
     // 专门处理静态资源的 Servlet 对象
+    private Map<String, String> urlPatternToServletName = new HashMap<>();
     private StaticResourceHttpServlet staticResourceHttpServlet;
     // 专门返回 404 的 Servlet 对象
     private NotFoundServlet notFoundServlet;
@@ -58,6 +59,7 @@ public class ServletManager {
             notFoundServlet = new NotFoundServlet();
             notFoundServlet.init();
         }
+        urlPatternToServletName = webapp.WebXML.servletMapping;
     }
 
     // 这个方法，在Tomcat的运行期间，只会被调用一次
@@ -76,7 +78,16 @@ public class ServletManager {
     }
 
     public HttpServlet searchFromWebXML(String requestURI) {
-        return null;
+        String servletName = urlPatternToServletName.get(requestURI);
+        System.out.printf("%s 该 URL 应该交给 %s Servlet 去处理%n", requestURI, servletName);
+        if (servletName == null) {
+            return null;
+        }
+
+        HttpServlet httpServlet = allServletInstances.get(servletName);
+        System.out.printf("%s 该 URL 应该交给 %s 对象 去处理%n", requestURI, httpServlet);
+
+        return httpServlet;
     }
 
     public StaticResourceHttpServlet getStaticResourceServlet() {

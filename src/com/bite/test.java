@@ -217,6 +217,10 @@ public class test {
     }
 
     public static void main(String[] args) {
+
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 5, 2,
+                TimeUnit.SECONDS, new LinkedBlockingQueue<>(5));
+        threadPoolExecutor.execute(() -> System.out.println("aaa"));
         System.out.println(5 & 4);
     }
 

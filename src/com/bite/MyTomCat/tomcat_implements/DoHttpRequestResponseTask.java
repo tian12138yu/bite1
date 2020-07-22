@@ -1,6 +1,9 @@
 package com.bite.MyTomCat.tomcat_implements;
 
+import com.bite.MyTomCat.servlet_standard.HttpServlet;
 import com.bite.MyTomCat.servlet_standard.HttpServletRequest;
+import com.bite.MyTomCat.servlet_standard.HttpServletResponse;
+
 import java.io.IOException;
 import java.net.Socket;
 
@@ -23,11 +26,9 @@ public class DoHttpRequestResponseTask implements Runnable {
 
         // 我们直接去找到 Servlet 对象，Servlet 对象的创建和销毁工作不在我们这里负责。
         try {
-            // 用到工厂模式
             HttpServletRequest req = HttpServletRequestBuilder.build(socket.getInputStream());
             System.out.println(req);
-            /*
-            HttpServletResponse resp = HttpServletResponseBuilder.build(socket.getOutputStream());
+            HttpServletResponse resp = HttpServletResponseBuilder.build();
 
             // 如何确定使用哪个 Servlet 对象处理请求的逻辑：
             // 1. 优先在 web.xml 找动态资源处理的 Servlet 对象
@@ -47,12 +48,14 @@ public class DoHttpRequestResponseTask implements Runnable {
 
             // 调用 service 方法：生命周期，service 会被调用很多次
             httpServlet.service(req, resp);
+            System.out.println(resp);
 
             // resp 中的内容已经业务端填充完毕，所以使用 send 方法，发送到 socket 的输出端中
             HttpServletResponseImpl respImpl = (HttpServletResponseImpl)resp;
-            respImpl.send();
-            */
-        } catch (IOException e) {
+            respImpl.send(socket.getOutputStream());
+
+            socket.close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
