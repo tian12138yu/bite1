@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="maven-bite:war">
+    <output-path>$PROJECT_DIR$/maven-bite/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>maven-bite</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="maven-bite-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="maven-bite:war exploded" />
+    </root>
+  </artifact>
+</component>
