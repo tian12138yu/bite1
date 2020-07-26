@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/bite1.iml" filepath="$PROJECT_DIR$/bite1.iml" />
       <module fileurl="file://$PROJECT_DIR$/maven-bite/maven-bite.iml" filepath="$PROJECT_DIR$/maven-bite/maven-bite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-bite/stu-info/stu-info.iml" filepath="$PROJECT_DIR$/maven-bite/stu-info/stu-info.iml" />
     </modules>
   </component>
 </project>
