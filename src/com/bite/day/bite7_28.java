@@ -1,6 +1,9 @@
 package com.bite.day;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -10,7 +13,7 @@ import java.util.Arrays;
 
 public class bite7_28 {
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
 
     }
 
@@ -93,32 +96,87 @@ public class bite7_28 {
 
         return dp[dp.length - 1];
     }
+    static int[] col ;
+    static int[] left ;
+    static int[] right ;
+    static List<List<String>> res;
+    public static List<List<String>> solveNQueens(int n) {
+        res = new ArrayList<>();
+        List<String> al = new ArrayList<>();
+        col = new int[2*n -1];
+        left = new int[2*n -1];
+        right = new int[2*n -1];
+        dfs(0,al,n);
+        return res;
+    }
 
+    private static void dfs(int row, List<String> al,int n) {
+        if (row == n){
+            res.add(new ArrayList<>(al));
+            return;
+        }
+        String s = "";
+        for (int i = 0; i < n; i++) {
+            if (col[i] == 0 && left[row + i] == 0 &&
+                    right[i - row + n - 1] == 0){
+                col[i] += 1;
+                left[row + i] += 1;
+                right[i - row + n - 1] += 1;
+                int x = i+1;
+                StringBuilder sb = new StringBuilder(s);
+                sb.append("Q");
+                while (x < n){
+                    sb.append(".");
+                    x++;
+                }
+                al.add(sb.toString());
+                dfs(row+1,al,n);
+                al.remove(al.size()-1);
+                col[i] -= 1;
+                left[row + i] -= 1;
+                right[i - row + n - 1] -= 1;
 
+            }
+            s += ".";
+        }
+    }
 
+    public static void main(String[] args) {
+        List<List<String>> lists = solveNQueens(5);
+        for (List<String> al: lists){
+            System.out.println(al);
+        }
+    }
+    /**
+     * [["Q....","..Q..","....Q",".Q...","...Q."]
+     * ["Q....","...Q.",".Q...","....Q","..Q.."],
+     * [".Q...","...Q.","Q....","..Q..","....Q"],
+     * [".Q...","....Q","..Q..","Q....","...Q."],
+     * ["..Q..","Q....","...Q.",".Q...","....Q"],
+     * ["..Q..","....Q",".Q...","...Q.","Q...."],
+     * ["...Q.","Q....","..Q..","....Q",".Q..."],
+     * ["...Q.",".Q...","....Q","..Q..","Q...."],
+     * ["....Q",".Q...","...Q.","Q....","..Q.."],
+     * ["....Q","..Q..","Q....","...Q.",".Q..."]]
+     */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    /**
+     * [["Q....","..Q..","....Q",".Q...","...Q."],
+     * ["Q....","...Q.",".Q...","....Q","..Q.."],
+     * ["Q....","....Q",".Q...","...Q.","Q...."],
+     * ["Q....","....Q","..Q..","Q....","...Q."],
+     * [".Q...","...Q.","Q....","..Q..","....Q"],
+     * [".Q...","....Q","..Q..","Q....","...Q."],
+     * ["..Q..","Q....","...Q.",".Q...","....Q"],
+     * ["..Q..","....Q",".Q...","...Q.","Q...."],
+     * ["...Q.","Q....","..Q..","....Q",".Q..."],
+     * ["...Q.","Q....","....Q",".Q...","...Q."],
+     * ["...Q.","Q....","....Q","..Q..","Q...."],
+     * ["...Q.",".Q...","....Q","Q....","...Q."],
+     * ["...Q.",".Q...","....Q","..Q..","Q...."],
+     * ["....Q",".Q...","...Q.","Q....","..Q.."],
+     * ["....Q","..Q..","Q....","...Q.",".Q..."]]
+     */
 
 
 
