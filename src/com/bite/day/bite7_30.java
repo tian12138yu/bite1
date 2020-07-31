@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.Executors;
 
 /**
  * @Author tjy
@@ -73,6 +74,7 @@ public class bite7_30 {
     public static void main(String[] args) {
         String s = intToRoman(1994);
         System.out.println(s);
+        Executors.newCachedThreadPool();
     }
 
     int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
