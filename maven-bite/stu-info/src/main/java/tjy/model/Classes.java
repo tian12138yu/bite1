@@ -9,7 +9,7 @@ import java.util.Date;
  * @Date 2020/7/31 19:17
  */
 @Data
-public class Classes {
+public class Classes extends DictionaryTag{
 
     private Integer id;
     private String ClassesName;
