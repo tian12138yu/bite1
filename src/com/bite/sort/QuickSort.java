@@ -60,6 +60,22 @@ public class QuickSort {
         quick(array,partition+1,right);
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public static void quickSort1(int[] array) {
         quick(array,0,array.length-1);
     }

@@ -92,7 +92,6 @@ public class bite8_1 {
         lr.remove(lr.size()-1);
         al.remove(al.size()-1);
         return false;
-        new ReentrantLock();
     }
 
 
