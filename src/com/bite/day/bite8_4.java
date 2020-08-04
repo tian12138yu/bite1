@@ -4,6 +4,8 @@ import com.bite.TreeNode;
 import com.sun.org.apache.bcel.internal.generic.LSTORE;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -51,5 +53,46 @@ public class bite8_4 {
         dfs(root.left,al);
         al.add(root.val);
         dfs(root.right,al);
+    }
+
+    /**
+     * Example1:
+     * 给出 numbers = [2, 7, 11, 15], target = 9, 返回 [0, 1].
+     * Example2:
+     * 给出 numbers = [15, 2, 7, 11], target = 9, 返回 [1, 2].
+     * 挑战
+     * @param numbers
+     * @param target
+     * @return
+     */
+    public int[] twoSum(int[] numbers, int target) {
+        // write your code here
+        List<Integer> al = new ArrayList<>();
+        for (int i = 0; i < numbers.length; i++) {
+            al.add(numbers[i]);
+        }
+        int[] res = new int[2];
+        for (int i = 0; i < numbers.length; i++) {
+            int x = target - numbers[i];
+            if (al.contains(x)){
+                if (al.indexOf(x) < i){
+                    res[0] = al.indexOf(x);
+                    res[1] = i;
+                }else {
+                    res[0] = i;
+                    res[1] = al.indexOf(x);
+                }
+            }
+        }
+        return res;
+    }
+
+    public int singleNumber(int[] A) {
+        // write your code here
+        int x = A[0];
+        for (int i = 1; i < A.length; i++) {
+            x = x ^ A[i];
+        }
+        return x;
     }
 }
