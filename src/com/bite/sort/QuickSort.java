@@ -5,7 +5,11 @@ package com.bite.sort;
  * @Date 2020/5/24 14:41
  */
 
+import java.util.PriorityQueue;
 import java.util.Stack;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 当快排进行多次后，数组就趋于有序，就可以用直接插入排序，优化排序速度。
@@ -107,8 +111,6 @@ public class QuickSort {
                 stack.push(right);
             }
         }
-
-
     }
 
 }
