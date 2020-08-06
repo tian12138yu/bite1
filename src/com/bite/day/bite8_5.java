@@ -107,7 +107,7 @@ public class bite8_5 {
         al.set(x,s1);
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         /**
          * s = "pineapplepenapple"
          * wordDict = ["apple", "pen", "applepen", "pine", "pineapple"]
@@ -124,5 +124,12 @@ public class bite8_5 {
 //        strings.add("cat");
         System.out.println(wordBreak("aaaaaaa", strings));
 
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> integers = new ArrayList<>();
+        while (true){
+            integers.add(1);
+        }
     }
 }
