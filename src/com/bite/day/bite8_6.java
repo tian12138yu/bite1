@@ -34,6 +34,9 @@ public class bite8_6 {
     public static void main(String[] args) {
         String[] ss = {"time", "me", "bell"};
         System.out.println(minimumLengthEncoding(ss));
+        String s = "";
+        String[] split = s.split(",");
+        System.out.println(split[0]);
     }
 
     class TrieNode{
