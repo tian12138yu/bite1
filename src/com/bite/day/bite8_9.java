@@ -1,5 +1,8 @@
 package com.bite.day;
 
+import java.util.HashMap;
+import java.util.Hashtable;
+
 /**
  * @Author tjy
  * @Date 2020/8/9 9:45
@@ -44,7 +47,31 @@ public class bite8_9 {
         return false;
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         System.out.println(reachingPoints(9,5,12,8));
+    }
+
+    public static void main(String[] args) {
+//        split(12);
+//        String s ;
+//
+
+
+
+    }
+    public static int split(int number) {
+        if (number > 1) {
+            if (number % 2 != 0) System.out.print(split((number + 1) / 2));
+            System.out.print(split(number / 2));
+        }
+        return number;
+    }
+
+    static class a{
+        private int x = 2;
+    }
+
+    static class b extends a{
+
     }
 }
