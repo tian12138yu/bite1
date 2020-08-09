@@ -1,5 +1,11 @@
 package com.bite.day;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @Author tjy
  * @Date 2020/8/8 10:03
@@ -45,6 +51,8 @@ public class bite8_8 {
         int[] a = {1,2,4,5,6,9,10,12,14,15,18,20,21,22,23,24,25,26,28};
         int[] costs = {3,13,57};
         System.out.println(mincostTickets(a, costs));
+        new ArrayList<>();
+        new HashMap<>();
     }
 
     static int[] days, costs;
