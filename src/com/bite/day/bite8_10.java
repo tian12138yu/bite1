@@ -8,7 +8,6 @@ import java.util.*;
  */
 
 public class bite8_10 {
-
     public int NumberOf1Between1AndN_Solution(int n) {
         String s = String.valueOf(n);
         int len = s.length();
