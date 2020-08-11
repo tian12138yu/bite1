@@ -120,8 +120,121 @@ public class bite8_11 {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
         int[] a = {1,2,3,4,5,6,7,0};
         System.out.println(InversePairs(a));
+    }
+
+    /**
+     * 给定一个二维的矩阵，包含 'X' 和 'O'（字母 O）。
+     *
+     * 找到所有被 'X' 围绕的区域，并将这些区域里所有的 'O' 用 'X' 填充。
+     *
+     * 示例:
+     *
+     * X X X X
+     * X O O X
+     * X X O X
+     * X O X X
+     * 运行你的函数后，矩阵变为：
+     *
+     * X X X X
+     * X X X X
+     * X X X X
+     * X O X X
+     *
+     */
+    public static void solve1(char[][] board) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[i][j] == 'O'){
+                    if (dfs1(board,i,j+1) &&
+                            dfs1(board,i,j-1)&&
+                            dfs1(board,i+1,j)&&
+                            dfs1(board,i-1,j)){
+                        board[i][j] = 'X';
+                    }
+                }
+            }
+        }
+    }
+
+    private static boolean dfs1(char[][] board, int i, int j) {
+        if (i < 0 || j < 0 || i >=  board.length || j >= board[0].length)return false;
+        if (board[i][j] == 'X')return true;
+        else {
+            if (dfs1(board,i,j+1) &&
+                    dfs1(board,i,j-1)&&
+                    dfs1(board,i+1,j)&&
+                    dfs1(board,i+1,j)){
+                board[i][j] = 'X';
+                return true;
+            }else {
+                return false;
+            }
+        }
+
+    }
+
+
+    public static void solve(char[][] board) {
+        if (board .length == 0)return;
+        for (int i = 0; i < board[0].length; i++) {
+            if (board[0][i] == 'O')
+                dfs(board,0,i);
+
+            if (board[board.length-1][i] == 'O')
+                dfs(board,board.length - 1,i);
+        }
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][board[0].length - 1] == 'O')
+                dfs(board,i,board[0].length - 1);
+
+            if (board[i][0] == 'O')
+                dfs(board,i,0);
+
+
+        }
+
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[i][j] == 'A')
+                    board[i][j] ='O';
+                else if (board[i][j] == 'O')
+                    board[i][j] = 'X';
+            }
+        }
+    }
+
+
+    private static void dfs(char[][] board,int x, int y){
+        if (x < 0 || y < 0 || x >=  board.length || y >= board[0].length || board[x][y] != 'O')return ;
+        if (board[x][y] == 'O')board[x][y] = 'A';
+
+        dfs(board,x+1,y);
+        dfs(board,x-1,y);
+        dfs(board,x,y+1);
+        dfs(board,x,y-1);
+
+
+    }
+
+    /**
+     * [["O","O","O","O","X","X"]
+     * ["O","O","O","O","O","O"]
+     * ["O","X","O","X","O","O"]
+     * ["O","X","O","O","X","O"]
+     * ["O","X","O","X","O","O"]
+     * ["O","X","O","O","O","O"]]
+
+     */
+    public static void main(String[] args) {
+        char[][] c = {{'X','X' ,'X' ,'X'},{'X' ,'O' ,'O' ,'X',},{'X' ,'X' ,'O', 'X'},{'X', 'O' ,'X' ,'X'}};
+        solve(c);
+        for (char[] x : c){
+            System.out.println(Arrays.toString(x));
+        }
+
+
     }
 }
