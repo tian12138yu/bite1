@@ -55,8 +55,11 @@ public class bite8_9 {
 //        split(12);
 //        String s ;
 //
+        System.out.println(Math.round(-11.5));
+        byte a =1;
+        byte b = 2;
 
-
+        System.out.println(a + b);
 
     }
     public static int split(int number) {

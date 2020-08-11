@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @Date 2020/5/22 18:59
  */
 
-public class InsertSort {
+public class        InsertSort {
 
     /**
      * 时间复杂度：最坏：O(n^2)，最好O(n)。

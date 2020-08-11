@@ -48,6 +48,14 @@ public class MergeSort {
         }
     }
 
+
+
+
+
+
+
+
+
     public static void merge1(int[] array,int low,int mid,int high) {
         int s1 = low;
         int s2 = mid+1;
