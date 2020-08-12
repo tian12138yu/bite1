@@ -40,6 +40,7 @@ public class bite8_11 {
 
         return -1;
     }
+
     static int count = 0;
     public static int InversePairs(int [] array) {
         spilit(array,0,array.length-1);
