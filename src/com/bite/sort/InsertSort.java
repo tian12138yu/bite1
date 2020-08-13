@@ -7,11 +7,12 @@ import java.util.Arrays;
  * @Date 2020/5/22 18:59
  */
 
-public class        InsertSort {
+public class InsertSort {
 
     /**
      * 时间复杂度：最坏：O(n^2)，最好O(n)。
      * 空间复杂度：O(1)
+     * 就是向前冒泡
      */
     static int[] elem = {5,6,1,3,8,9};
     public static void main(String[] args) {
@@ -26,6 +27,7 @@ public class        InsertSort {
                 }
             }
             elem[j + 1] = temp;
+            System.out.println(Arrays.toString(elem));
         }
         System.out.println(Arrays.toString(elem));
     }

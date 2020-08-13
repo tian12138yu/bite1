@@ -7,7 +7,7 @@ import java.util.*;
  * @Date 2020/8/11 11:00
  */
 
-public class bite8_11 {
+public class bite8_11{
 
     public static int GetUglyNumber_Solution(int index) {
         int[] a = {2,3,5};
@@ -229,13 +229,20 @@ public class bite8_11 {
      * ["O","X","O","O","O","O"]]
 
      */
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
         char[][] c = {{'X','X' ,'X' ,'X'},{'X' ,'O' ,'O' ,'X',},{'X' ,'X' ,'O', 'X'},{'X', 'O' ,'X' ,'X'}};
         solve(c);
         for (char[] x : c){
             System.out.println(Arrays.toString(x));
         }
 
+
+    }
+
+    public static void main(String[] args) {
+        double d1=-0.5;
+        System.out.println("Ceil d1="+Math.ceil(d1));
+        System.out.println("floor d1="+Math.floor(d1));
 
     }
 }
