@@ -1,7 +1,8 @@
 package com.bite.day;
 
+import javax.security.auth.login.CredentialException;
 import java.lang.reflect.Array;
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * @Author tjy
@@ -81,10 +82,102 @@ public class bite8_13 {
         return res;
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         System.out.println(Character.isDigit('5'));
         System.out.println(Math.pow(10,0));
         System.out.println(~0);
+    }
+
+
+    static ArrayList<ArrayList<Integer>> als = new ArrayList<>();
+    public static boolean Game24Points (int[] arr) {
+        // write code here
+        if (arr.length != 4)return false;
+        dfs(arr,0,new ArrayList<Integer>());
+        for (ArrayList<Integer> al : als){
+            System.out.println(al);
+            for (int i = 0; i < al.size(); i++) {
+                if (dfs(al,0,0))
+                    return true;
+            }
+        }
+        return false;
+
+    }
+
+    private static void dfs(int[] arr, int i,ArrayList<Integer> al) {
+        if (i >= 4){
+            als.add(new ArrayList<>(al));
+            return;
+        }
+        for (int j = i; j <arr.length; j++) {
+            al.add(arr[j]);
+            dfs(arr,i+1,al);
+            al.remove(al.size()-1);
+        }
+    }
+
+    private static boolean dfs(ArrayList<Integer> al,int i,int sum){
+        if (i == 3 && sum == 24)return true;
+        if (i == 4)return false;
+        if (i == 0){
+            sum += al.get(0);
+            dfs(al,i+1,sum);
+        }
+
+        return dfs(al,i+1,sum+al.get(i))||
+        dfs(al,i+1,sum-al.get(i))||
+        dfs(al,i+1,sum*al.get(i))||
+        dfs(al,i+1,sum/al.get(i));
+    }
+
+
+    public static boolean IsValidExp (String s) {
+
+        if (s.length() == 0)return true;
+        // write code here
+        HashMap<Character, Character> map = new HashMap<>();
+        {
+            map.put('}','{');
+            map.put(')','(');
+            map.put(']','[');
+
+        }
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (map.containsKey(s.charAt(i))){
+                if (stack.isEmpty())return false;
+                Character pop = stack.pop();
+                if (!pop.equals(map.get(s.charAt(i))))return false;
+            }else {
+                stack.push(s.charAt(i));
+            }
+        }
+        return stack.isEmpty();
+    }
+
+
+    public int GetCoinCount (int N) {
+        // write code here
+
+        int n = 1024 - N;
+        int sum = 0;
+        sum += n / 64;
+        n = n % 64;
+        sum += n / 16;
+        n %= 16;
+        sum += n / 4;
+        n %= 4;
+        sum += n;
+        return sum;
+
+    }
+
+
+    public static void main(String[] args) {
+        int[] a = {7,2,1,10};
+        System.out.println(Game24Points(a));
+        System.out.println(IsValidExp("([)]"));
     }
 
 }
