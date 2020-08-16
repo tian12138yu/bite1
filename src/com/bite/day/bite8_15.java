@@ -275,6 +275,9 @@ public class bite8_15 {
             }
 
         }
+        Thread.currentThread();
+        ThreadLocal<Integer> local = new ThreadLocal<>();
+        local.set(5);
     }
 
     class Node{
