@@ -73,12 +73,12 @@ public class Demo {
         sb.append(chars[0]);
         for (int i = 1; i < chars.length; i++) {
             if (chars[i] != chars[i-1]){
-                sb.append(" ");
+                sb.append("-");
             }
             sb.append(chars[i]);
         }
 
-        String[] s1 = sb.toString().split(" ");
+        String[] s1 = sb.toString().split("-");
         Arrays.sort(s1, (o1, o2) -> o2.length() - o1.length());
         sb = new StringBuilder();
         for (int i = 0; i < s1.length; i++) {
