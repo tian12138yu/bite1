@@ -70,6 +70,7 @@ public class Demo {
         char[] chars = s.toCharArray();
         Arrays.sort(chars);
         StringBuilder sb = new StringBuilder();
+        sb.append(chars[0]);
         for (int i = 1; i < chars.length; i++) {
             if (chars[i] != chars[i-1]){
                 sb.append(" ");
