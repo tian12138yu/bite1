@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
  * @Date 2020/8/16 10:01
  */
 
-public class bte8_16 {
+public class bite8_16 {
 
 
     public TreeLinkNode GetNext(TreeLinkNode pNode) {
