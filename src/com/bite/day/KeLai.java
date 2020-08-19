@@ -14,7 +14,7 @@ public class KeLai {
 
         new Thread(() ->{
              {
-
+                 System.out.println("a ad");
             }
         }).start();
         new Thread(new Runnable() {
@@ -24,4 +24,6 @@ public class KeLai {
             }
         }).start();
     }
+
+
 }
