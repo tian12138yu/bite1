@@ -1,7 +1,12 @@
 package com.bite.day;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Semaphore;
 
 /**
  * @Author tjy
@@ -102,7 +107,26 @@ public class bite8_19 {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println(ambiguousCoordinates("123"));
+        new CountDownLatch(6);
+        CyclicBarrier dashuaibi = new CyclicBarrier(8, () -> {
+            System.out.println("dashuaibi");
+        });
+        for (int i = 0; i < 8; i++) {
+            new Thread(() -> {
+                try {
+                    dashuaibi.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (BrokenBarrierException e) {
+                    e.printStackTrace();
+                }
+            }).start();
+        }
+
+        Semaphore semaphore = new Semaphore(5);
+        semaphore.acquire();semaphore.release();
+        Collections.synchronizedList(new ArrayList<>());
     }
 }
