@@ -68,6 +68,9 @@ public class bite8_24 {
                 max = Math.max(max, dp[n - 1][i][m]);
             }
             System.out.println(max);
+
+
+
         }
     }
 }
