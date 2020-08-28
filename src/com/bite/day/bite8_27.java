@@ -31,6 +31,7 @@ public class bite8_27 {
             }
             System.out.println();
         }
+        bfs(root);
     }
 
     private static void bfs(TreeNode root, int leve) {
@@ -42,6 +43,29 @@ public class bite8_27 {
         treeNodes.add(root);
         bfs(root.left,leve+1);
         bfs(root.right,leve+1);
+
+    }
+
+    private static void bfs(TreeNode root) {
+        if (root == null){
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()){
+            int size = queue.size();
+            for (int i = size-1; i >= 0; i--) {
+                TreeNode poll = queue.poll();
+                System.out.print(poll.val+ " ");
+                if (poll.left != null){
+                    queue.offer(poll.left);
+                }
+                if (poll.right != null){
+                    queue.offer(poll.right);
+                }
+            }
+            System.out.println();
+        }
 
     }
 
