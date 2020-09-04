@@ -19,6 +19,8 @@ public class bite9_2 {
         System.out.println(dfs(4));
     }
 
+
+
     private static int dfs(int i) {
         if (i == 0)return 1;
         if (i == 1)return 3;
