@@ -1,7 +1,11 @@
 package com.bite.day.september;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.Executors;
 
 /**
@@ -66,9 +70,59 @@ public class bite9_8 {
 //    }
 
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         System.out.println(combine(4,2));
         Executors.newFixedThreadPool(10);
 
+    }
+
+    public static void main2(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] s = br.readLine().split(" ");
+        for (int i = 0; i < s.length; i++) {
+            if (s[i].length() < 8 || s[i].length() > 120){
+                System.out.println(1);
+                continue;
+            }
+            boolean b = isTrue(s[i]);
+            if (b)
+                System.out.println(0);
+            else
+                System.out.println(2);
+        }
+    }
+
+    private static boolean isTrue(String s) {
+        boolean[] b = new boolean[4];
+        char[] chars = s.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if (Character.isLowerCase(chars[i]))
+                b[0] = true;
+            else if (Character.isUpperCase(chars[i]))
+                b[1] = true;
+            else if (Character.isDigit(chars[i]))
+                b[2] = true;
+            else
+                b[3] = true;
+        }
+
+        boolean res = true;
+        for (boolean temp : b){
+            res &= temp;
+        }
+        return res;
+    }
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = "";
+        while ((s = br.readLine()) != null){
+            Random random = new Random();
+            int x = random.nextInt(898564654);
+            if (x % 2 == 0)
+                System.out.println(true);
+            else
+                System.out.println(false);
+        }
     }
 }

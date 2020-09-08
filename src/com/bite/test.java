@@ -17,6 +17,14 @@ class Person{
         this.id = id;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -216,13 +224,24 @@ public class test {
 
     }
 
-    public static void main(String[] args) {
+    public static void main456(String[] args) {
 
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 5, 2,
                 TimeUnit.SECONDS, new LinkedBlockingQueue<>(5));
         threadPoolExecutor.execute(() -> System.out.println("aaa"));
         System.out.println(5 & 4);
 
+    }
+
+    public static void main(String[] args) {
+        Person[] ps = new Person[2];
+        Person person1 = new Person(2);
+        ps[0] = person1;
+        Person p2 = new Person(3);
+        ps[1] = p2;
+        Person[] people = Arrays.copyOf(ps, 2);
+        p2.setId(10);
+        System.out.println(people[1].getId());
     }
 
 }
