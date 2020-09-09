@@ -21,7 +21,7 @@ public class HeapSort {
 
     private static void adjustDown(int[] array, int i, int len) {
         int parent = i;
-        int child = parent *2 +1;
+        int child = parent * 2 +1;
         while (child < len){
             if (child + 1 < len && array[child] > array[child + 1])
                 child++;
