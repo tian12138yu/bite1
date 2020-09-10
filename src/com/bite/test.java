@@ -233,7 +233,7 @@ public class test {
 
     }
 
-    public static void main(String[] args) {
+    public static void main31232(String[] args) {
         Person[] ps = new Person[2];
         Person person1 = new Person(2);
         ps[0] = person1;
@@ -242,6 +242,22 @@ public class test {
         Person[] people = Arrays.copyOf(ps, 2);
         p2.setId(10);
         System.out.println(people[1].getId());
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Integer.MAX_VALUE);
+
+        double v = Math.pow(2, 31) - 1;
+        System.out.println(v);
+        int x = 2147483647;
+        int count = 0;
+        while (x != 0){
+
+            x = x >>>1;
+            count++;
+        }
+
+        System.out.println(count);
     }
 
 }
