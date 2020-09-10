@@ -61,5 +61,50 @@ public class bite9_10 {
     }
 
 
+    public static int combination (int r, int n) {
+        // write code here
+        int res = 1;
+        for (int i = n; i > r; i--) {
+            res *= i;
+        }
+        return res;
+    }
+
+
+    public int[] arrayMerge (int[] array1, int n, int[] array2, int m) {
+        // write code here
+        int x = 0;
+        int y = m-1;
+        int z = 0;
+        int[] res = new int[n+m];
+        while (x < n && y >= 0) {
+            if (array1[x] < array2[y]){
+                res[z] = array1[x];
+                x++;
+            }
+
+            else if (array1[x] >= array2[y]){
+                res[z] = array2[y];
+                z--;
+            }
+            z++;
+        }
+        while (x < n){
+            res[z++] = array1[x++];
+        }
+
+        while (y >= 0){
+            res[z++] = array2[y--];
+        }
+
+        return res;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(combination(3, 5));
+    }
+
+
+
 
 }
