@@ -1,6 +1,7 @@
 package com.bite;
 
 
+
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.*;
@@ -244,7 +245,7 @@ public class test {
         System.out.println(people[1].getId());
     }
 
-    public static void main(String[] args) {
+    public static void main312(String[] args) {
         System.out.println(Integer.MAX_VALUE);
 
         double v = Math.pow(2, 31) - 1;
@@ -258,6 +259,21 @@ public class test {
         }
 
         System.out.println(count);
+
+    }
+
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        String a = new String("a");
+        String a1 = new String("a");
+        set.add(a);
+        set.add(a1);
+        for (String s : set){
+            System.out.println(s);
+        }
+
+
+
     }
 
 }

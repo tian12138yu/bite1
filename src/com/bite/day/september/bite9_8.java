@@ -78,18 +78,20 @@ public class bite9_8 {
 
     public static void main2(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] s = br.readLine().split(" ");
-        for (int i = 0; i < s.length; i++) {
-            if (s[i].length() < 8 || s[i].length() > 120){
-                System.out.println(1);
+        String s = "";
+        while ( (s = br.readLine()) != null) {
+            if (s.length() < 8){
+                System.out.println("Irregular password");
                 continue;
             }
-            boolean b = isTrue(s[i]);
+            boolean b = isTrue(s);
             if (b)
-                System.out.println(0);
+                System.out.println("Ok");
             else
-                System.out.println(2);
+                System.out.println("Irregular password");
+
         }
+
     }
 
     private static boolean isTrue(String s) {
