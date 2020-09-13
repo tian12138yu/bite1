@@ -1,5 +1,10 @@
 package com.bite.day.september;
 
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  * @Author tjy
  * @Date 2020/9/13 9:37
@@ -58,10 +63,32 @@ public class bite9_13 {
         return b1;
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) throws IOException {
         char[][] c= {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
         String s ="ABCB";
         System.out.println(exist(c, s));
+        FileWriter fileWriter = new FileWriter("");
+
+    }
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = "";
+        while ((s = br.readLine()) != null){
+            int n = Integer.parseInt(s);
+            String ss = br.readLine();
+            int temp = 0;
+            StringBuilder res = new StringBuilder();
+            while (temp < ss.length()){
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < n && temp < ss.length(); i++) {
+                    sb.append(ss.charAt(temp));
+                    temp++;
+                }
+                res.append(sb.reverse());
+            }
+            System.out.println(res.toString());
+        }
     }
 
 
