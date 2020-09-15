@@ -1,7 +1,6 @@
 package com.bite.day.september;
 
 import com.bite.TreeNode;
-import org.omg.CORBA.INTERNAL;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,5 +49,6 @@ public class bite9_14 {
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
         System.out.println(inorderTraversal(root));
+        new StringBuilder();
     }
 }
