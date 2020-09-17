@@ -262,7 +262,7 @@ public class test {
 
     }
 
-    public static void main(String[] args) {
+    public static void main321(String[] args) {
         Set<String> set = new HashSet<>();
         String a = new String("a");
         String a1 = new String("a");
@@ -271,6 +271,13 @@ public class test {
         for (String s : set){
             System.out.println(s);
         }
+    }
+
+    public static void main(String[] args) {
+        String s1 = "hello";
+        s1 += "world";//string 的 + 操作返回的是一个新的对象
+        String s2 = "helloworld";
+        System.out.println(s1 == s2);
     }
 
 }

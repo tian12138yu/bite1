@@ -31,7 +31,7 @@ public class bite9_16 {
      */
     public TreeNode invertTree(TreeNode root) {
         if (root == null) {
-            return root;
+            return null;
         }
         swap(root);
         return root;
