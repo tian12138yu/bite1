@@ -27,8 +27,7 @@ public class bite9_17 {
 
     public boolean isPowerOfTwo (int n) {
         // write code here
-        if (n == 1)return true;
-        int x = 0;
+        if (n == 1)return true;int x = 0;
         while (n != 0) {
             n ^= n - 1;
             x++;
