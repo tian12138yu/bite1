@@ -37,7 +37,6 @@ public class bite9_23 {
                     System.out.println(0);
                     continue;
                 }
-
             }
             System.out.println(deciaml);
         }
