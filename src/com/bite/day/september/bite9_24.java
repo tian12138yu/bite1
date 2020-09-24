@@ -112,7 +112,7 @@ public class bite9_24 {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main4(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = "";
         while ((s = br.readLine()) != null) {
@@ -120,6 +120,7 @@ public class bite9_24 {
             int n = s.charAt(2) - '0';
             System.out.println(dfs(m,n));
         }
+        new Thread().getState();
     }
 
     private static int dfs(int m, int n) {
@@ -128,6 +129,25 @@ public class bite9_24 {
         else if (n > m) return dfs(m,m);
         else return dfs(m,n-1) + dfs(m - n,n);
     }
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = "";
+        while ((s = br.readLine()) != null) {
+            String[] s1 = s.toLowerCase().split(" ");
+            if (s1.length < 3){
+                for (String ss : s1) {
+                    System.out.print(ss);
+                }
+                System.out.println();
+            }else {
+                for (String ss : s1) {
+                    System.out.print(ss.charAt(0));
+                }
+            }
+        }
+    }
+
 }
 
 
