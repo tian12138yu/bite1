@@ -1,12 +1,11 @@
 package com.bite.day.september;
 
+import com.sun.org.apache.xerces.internal.parsers.CachingParserPool;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @Author tjy
@@ -109,6 +108,7 @@ public class bite9_24 {
 
             System.out.println(res);
 
+
         }
     }
 
@@ -131,21 +131,28 @@ public class bite9_24 {
     }
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String s = "";
-        while ((s = br.readLine()) != null) {
-            String[] s1 = s.toLowerCase().split(" ");
-            if (s1.length < 3){
-                for (String ss : s1) {
-                    System.out.print(ss);
-                }
-                System.out.println();
-            }else {
-                for (String ss : s1) {
-                    System.out.print(ss.charAt(0));
-                }
-            }
-        }
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        String s = "";
+//        while ((s = br.readLine()) != null) {
+//            String[] s1 = s.toLowerCase().split(" ");
+//            if (s1.length < 3){
+//                for (String ss : s1) {
+//                    System.out.print(ss);
+//                }
+//                System.out.println();
+//            }else {
+//                for (String ss : s1) {
+//                    System.out.print(ss.charAt(0));
+//                }
+//            }
+//        }
+
+        Object s1 = "hello";
+        Object s2 = "hello";
+        System.out.println(s1 == s2);
+
+        System.out.println(0.1 * 3 == 0.3);
+        System.out.println(0.3 * 1 == 0.3);
     }
 
 }
