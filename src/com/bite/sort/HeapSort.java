@@ -14,7 +14,8 @@ public class HeapSort {
         for (int i = (len -2) / 2; i >= 0; i--) {
             adjustDown(array,i,len);
         }
-    }/**
+    }
+    /**
      * 时间复杂度：O（N*logn）
      * 空间复杂度：O（1）
      */
