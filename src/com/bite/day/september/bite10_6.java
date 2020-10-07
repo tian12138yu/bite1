@@ -1,5 +1,8 @@
 package com.bite.day.september;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,5 +37,14 @@ public class bite10_6 {
         }
 
         return ans;
+    }
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = "";
+        while ((s = br.readLine()) != null) {
+            String[] s1 = s.split(" ");
+
+        }
     }
 }
