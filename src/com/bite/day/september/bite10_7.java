@@ -12,7 +12,7 @@ public class bite10_7 {
 
     public void sortColors(int[] nums) {
         if (nums.length == 0)return;
-        List<Integer> al0= new ArrayList<>();
+        List<Integer> al0 = new ArrayList<>();
         List<Integer> al1 = new ArrayList<>();
         List<Integer> al2 = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
