@@ -12,6 +12,18 @@ import java.util.List;
 public class bite10_9 {
 
     public static void main(String[] args) {
+        System.out.println(get(1));
+    }
+
+    public static int get(int i){
+        try{
+            ++i;
+            System.out.println(i);
+            return i ++;
+        }finally {
+            ++ i;
+            System.out.println(i);
+        }
 
     }
 
