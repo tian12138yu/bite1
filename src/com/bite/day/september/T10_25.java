@@ -45,6 +45,7 @@ public class T10_25 {
                 int low = i - 1;
                 int high = i + 1;
                 int temp = 3;
+
                 while (low > 0 && A[low] > A[low - 1]) {
                     low--;
                     temp++;
