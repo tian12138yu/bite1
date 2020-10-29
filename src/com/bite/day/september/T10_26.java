@@ -16,9 +16,6 @@ import java.util.List;
  * 换而言之，对于每个 nums[i] 你必须计算出有效的 j 的数量，其中 j 满足 j != i 且 nums[j] < nums[i] 。
  *
  * 以数组形式返回答案。
- *
- *  
- *
  * 示例 1：
  *
  * 输入：nums = [8,1,2,2,3]
@@ -95,18 +92,6 @@ public class T10_26 {
         int[] ints = smallerNumbersThanCurrent(a);
         System.out.println(Arrays.toString(ints));
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
