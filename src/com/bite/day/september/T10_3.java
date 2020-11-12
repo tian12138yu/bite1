@@ -1,5 +1,8 @@
 package com.bite.day.september;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 /**
  * @Author tjy
  * @Date 2020/11/3 22:36
@@ -39,5 +42,8 @@ public class T10_3 {
     public static void main(String[] args) {
         int[] a = {9,8,7,6,5,4,3,2,1,0};
         System.out.println(validMountainArray(a));
+
+        new ArrayList<>();
+        new LinkedList<>();
     }
 }
