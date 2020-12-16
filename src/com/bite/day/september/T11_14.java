@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @Author tjy
@@ -62,5 +63,16 @@ public class T11_14 {
         int[] a2 = {21,11,26,20};
         int[] ints = relativeSortArray(a1, a2);
         System.out.println(Arrays.toString(ints));
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("sb");
+            }
+        }).start();
+
+        new ReentrantLock(true);
+
+
     }
 }
